@@ -1,18 +1,18 @@
-// import { useState } from 'react'
 import './App.css';
-import Nav from './components/Nav.tsx';
 import BoxCanvas from './three.js/Box.tsx';
-
+import Button from 'react-bootstrap/Button';
+import CustomNav from './components/Nav.tsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  // const [count, setCount] = useState(0)
 
   return (
     <>
-      <Nav />
+      <CustomNav />
       <h1>Hi! I'm Alfonso</h1>
       <BoxCanvas />
-      <p>And I copy pasted all this code to make these boxes spin around</p>
+      <p>Full Stack Web Developer with a background of connecting clients to digital solutions</p>
+      <Button>It's a Button</Button>
     </>
   );
 }
