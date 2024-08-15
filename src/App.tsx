@@ -1,19 +1,20 @@
 import './App.css';
-import BoxCanvas from './three.js/Box.tsx';
-import Button from 'react-bootstrap/Button';
-import CustomNav from './components/Nav.tsx';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Taskbar from './components/Taskbar.tsx';
+import svg from './assets/react.svg';
+
+import Icon from './components/Icon.tsx';
+import Draggable from 'react-draggable';
+import DraggableWrapper from './components/DraggableWrapper.tsx';
 
 function App() {
 
   return (
-    <>
-      <CustomNav />
-      <h1>Hi! I'm Alfonso</h1>
-      <BoxCanvas />
-      <p>Full Stack Web Developer with a background of connecting clients to digital solutions</p>
-      <Button>It's a Button</Button>
-    </>
+    <div className='desktop'>
+      <DraggableWrapper img={svg} name="test-icon" />
+      {/* <h1>Hi! I'm Alfonso</h1>
+      <p>Full Stack Web Developer with a background of connecting clients to digital solutions</p> */}
+      <Taskbar />
+    </div>
   );
 }
 
