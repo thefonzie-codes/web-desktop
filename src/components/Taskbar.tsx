@@ -1,16 +1,23 @@
-import { useNavigate } from "react-router-dom";
-import slime from "../assets/slime.png"
-import { useState } from "react";
+import slime from "../assets/slime.png";
+import React from "react";
 
-export default function Taskbar() {
+type MenuTypes = {
+  menuSelected: boolean;
+};
 
-  const [menu, setMenu] = useState(false)
 
-  const navigate = useNavigate();
+type TaskbarProps = {
+  state: MenuTypes;
+  setState: React.Dispatch<React.SetStateAction<MenuTypes>>;
+};
+
+export default function Taskbar({ state, setState }: TaskbarProps) {
 
   return (
     <nav>
-      <img src={slime}/>
+      <button onClick={() => setState({ ...state, menuSelected: !state.menuSelected })}>
+        <img className={state.menuSelected ? 'selected' : 'not-selected'} src={slime} />
+      </button>
     </nav>
   );
 }

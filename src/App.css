@@ -61,11 +61,53 @@ nav {
     transition: 0.3s;
   }
 
+  button {
+    margin: 0px;
+    padding: 0px;
+    border: 2px;
+    height: 50px;
+    background-color: #1a1a1a;
+  }
+
+  .selected {
+    background-color: rgba(119, 136, 153, .5);
+    ;
+  }
+
   img:hover {
     background-color: rgba(119, 136, 153, .5);
-  } 
+  }
 
   .nav-links {
     padding: 2rem;
+  }
+}
+
+.menu {
+  height: 550px;
+  width: 400px;
+  border-radius: 25px;
+  background-color: rgba(163, 163, 163, 100);
+  margin: 5px;
+  position: fixed;
+  bottom: 55px;
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+  transform: translateY(100%);
+  /* Start off-screen */
+  transition: transform 0.25s ease-in-out;
+
+  /* Transition effect */
+  /* Slide-in class to bring the menu into view */
+  &.slide-in {
+    transform: translateY(0);
+    /* Move menu into view */
+  }
+
+  /* Slide-out class to hide the menu */
+  &.slide-out {
+    transform: translateY(110%);
+    /* Move menu off-screen */
   }
 }

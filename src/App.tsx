@@ -2,18 +2,22 @@ import './App.css';
 import Taskbar from './components/Taskbar.tsx';
 import svg from './assets/react.svg';
 
-import Icon from './components/Icon.tsx';
-import Draggable from 'react-draggable';
+import { useState } from 'react';
+
 import DraggableWrapper from './components/DraggableWrapper.tsx';
+import Menu from './components/Menu.tsx';
 
 function App() {
 
+  const [ state, setState ] = useState(
+    { menuSelected: false }
+  )
+
   return (
     <div className='desktop'>
+      <Menu state={state}/>
       <DraggableWrapper img={svg} name="test-icon" />
-      {/* <h1>Hi! I'm Alfonso</h1>
-      <p>Full Stack Web Developer with a background of connecting clients to digital solutions</p> */}
-      <Taskbar />
+      <Taskbar state={state} setState={setState}/>
     </div>
   );
 }
