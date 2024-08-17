@@ -4,8 +4,9 @@ import svg from './assets/react.svg';
 
 import { useState } from 'react';
 
-import DraggableWrapper from './components/DraggableWrapper.tsx';
+import Icon from './components/Icon.tsx';
 import Menu from './components/Menu.tsx';
+import Window from './components/Window.tsx';
 
 function App() {
 
@@ -16,8 +17,9 @@ function App() {
   return (
     <div className='desktop'>
       <Menu state={state}/>
-      <DraggableWrapper img={svg} name="test-icon" />
+      <Icon img={svg} name="test-icon" />
       <Taskbar state={state} setState={setState}/>
+      <Window url='https://thefonzie-codes.github.io/my-to-do-app/#/home' />
     </div>
   );
 }
