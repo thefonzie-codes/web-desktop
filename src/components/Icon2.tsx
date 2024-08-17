@@ -1,15 +1,35 @@
 import "../App.css";
+import React, { SetStateAction } from "react";
+import Draggable from "react-draggable";
+import { useState } from "react";
 
-export default function Icon(props: any) {
+import { StateTypes } from "../types";
 
-  const { name, img, isDragging } = props;
+type IconProps = {
+  name: string,
+  img: string,
+  state: StateTypes,
+  setState: React.Dispatch<SetStateAction<StateTypes>>,
+}
 
-  
+export default function Icon2 ({ name, img, state, setState }: IconProps) {
+
+  const [ selected, setSelected ] = useState(false)
 
   return (
-      <div className="icon">
+    <Draggable
+      defaultPosition={{ x: 20, y: 35 }}
+      >
+        <div 
+        className={selected ? "icon selected" : "icon"}
+        tabIndex={0}
+        onFocus={() => setSelected(true)}
+        onBlur={() => setSelected(false)}
+        onDoubleClick={() => setState({...state, petomeWindowOpen: true})}
+        >
         <img src={img}></img>
         <p>{name}</p>
       </div>
+    </Draggable>
   );
 }
