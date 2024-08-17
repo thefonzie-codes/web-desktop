@@ -2,10 +2,12 @@
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://thefonzie-codes.github.io/portfolio",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "deploy": "gh-pages -d src",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -31,6 +33,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
+    "gh-pages": "^6.1.1",
     "postcss": "^8.4.41",
     "typescript": "^5.2.2",
     "vite": "^5.3.4"
