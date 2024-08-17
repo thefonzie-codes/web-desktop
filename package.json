@@ -2,12 +2,13 @@
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://thefonzie-codes.github.io/portfolio",
+  "homepage": "https://thefonzie-codes.github.io/portfolio/",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "deploy": "gh-pages -d src",
+    "deploy": "gh-pages -d dist",
+    "clean": "rm -rf dist",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
