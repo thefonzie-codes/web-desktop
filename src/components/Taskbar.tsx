@@ -1,14 +1,11 @@
 import slime from "../assets/slime.png";
 import React from "react";
 
-type MenuTypes = {
-  menuSelected: boolean;
-};
-
+import type { StateTypes } from "../types"
 
 type TaskbarProps = {
-  state: MenuTypes;
-  setState: React.Dispatch<React.SetStateAction<MenuTypes>>;
+  state: StateTypes;
+  setState: React.Dispatch<React.SetStateAction<StateTypes>>;
 };
 
 export default function Taskbar({ state, setState }: TaskbarProps) {

@@ -10,16 +10,20 @@ import Window from './components/Window.tsx';
 
 function App() {
 
-  const [ state, setState ] = useState(
-    { menuSelected: false }
-  )
+  const [ state, setState ] = useState({ 
+    menuSelected: false,
+    windowOpen: false,
+  })
 
   return (
     <div className='desktop'>
       <Menu state={state}/>
-      <Icon img={svg} name="test-icon" />
+      <Icon img={svg} name="Done!" state={state} setState={setState}/>
       <Taskbar state={state} setState={setState}/>
-      <Window url='https://thefonzie-codes.github.io/my-to-do-app/#/home' />
+      {state.windowOpen && <Window 
+        state={state} 
+        setState={setState} 
+        url='https://thefonzie-codes.github.io/my-to-do-app/#/home' />}
     </div>
   );
 }

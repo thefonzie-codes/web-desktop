@@ -4,10 +4,27 @@
   border: 1px solid gray;
 
   .menu-bar {
+    display: flex;
+    flex-direction: row-reverse;
     max-width: 100%;
     height: 30px;
     background-color: black;
     border: 0 0 0 1px solid grey;
+
+    button {
+      background-color: black;
+      color: gray;
+      border: none;
+      height: 30px;
+      width: 30px;
+      transition: 0.2s;
+
+      &:hover {
+        background-color: red;
+        background-size: contain;
+        color: lightgray;
+      }
+    }
   }
 
   iframe {

@@ -1,33 +1,32 @@
 import "../App.css";
+import React, { SetStateAction } from "react";
 import Draggable from "react-draggable";
 import { useState } from "react";
 
-export default function icon(props: any) {
+import { StateTypes } from "../types";
 
-  const { name, img } = props;
+type IconProps = {
+  name: string,
+  img: string,
+  state: StateTypes,
+  setState: React.Dispatch<SetStateAction<StateTypes>>,
+}
 
-  const [isDragging, setIsDragging] = useState<any>(false)
+export default function Icon({ name, img, state, setState }: IconProps) {
 
-  const eventControl = (evt: {type: any;}, info: any) => {
-    
-    if (evt.type === 'mousemove' || evt.type === 'touchmove') {
-      setIsDragging(true)
-    }
-
-    if (evt.type === 'mouseup' || evt.type == 'touchend') {
-      setTimeout(() => {
-        setIsDragging(false);
-      }, 100);
-    }
-  }
+  const [ selected, setSelected ] = useState(false)
 
   return (
     <Draggable
       defaultPosition={{ x: 20, y: 35 }}
-      onDrag={eventControl}
-      onStop={eventControl}
       >
-        <div className="icon">
+        <div 
+        className={selected ? "icon selected" : "icon"}
+        tabIndex={0}
+        onFocus={() => setSelected(true)}
+        onBlur={() => setSelected(false)}
+        onDoubleClick={() => setState({...state, windowOpen: true})}
+        >
         <img src={img}></img>
         <p>{name}</p>
       </div>
