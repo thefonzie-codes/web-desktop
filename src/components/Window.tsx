@@ -1,6 +1,6 @@
-import Draggable from "react-draggable";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faX } from '@fortawesome/free-solid-svg-icons';
+import { Rnd } from "react-rnd";
 
 import { StateTypes } from "../types";
 
@@ -14,8 +14,7 @@ type WindowProps = {
 
 export default function Window({ url, state, setState }: WindowProps) {
   return (
-    <Draggable>
-      <div className="window">
+    <Rnd className="window">
         <div className="menu-bar">
           <button
             onClick={() => setState({...state, windowOpen: false})}>
@@ -27,7 +26,6 @@ export default function Window({ url, state, setState }: WindowProps) {
           width="700"
           src={url}
         />
-      </div>
-    </Draggable>
+    </Rnd>
   );
 }

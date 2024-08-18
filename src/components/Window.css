@@ -1,7 +1,6 @@
 .window {
-  width: 704px;
-  height: 532px;
   border: 1px solid gray;
+  display: inline-block;
 
   .menu-bar {
     display: flex;
@@ -10,6 +9,7 @@
     height: 30px;
     background-color: black;
     border: 0 0 0 1px solid grey;
+    cursor: default;
 
     button {
       background-color: black;
@@ -29,5 +29,7 @@
 
   iframe {
     border: none;
+    height: calc(100% - 30px);
+    width: 100%;
   }
 }
