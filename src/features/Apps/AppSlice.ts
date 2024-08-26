@@ -1,11 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { RootState } from "../../app/store";
 
-// type AppTypes = {
-//   active: boolean,
-// }
-
-interface AppState {
+export interface AppState {
     openApps: string[],
 }
 
@@ -18,9 +14,10 @@ export const AppSlice = createSlice({
     initialState,
     reducers: {
         open: (state, action) => {
+            const appName = action.payload
             const { openApps } = state;
-            console.log(action.payload);
-            openApps.push(action.payload);
+            console.log(appName);
+            openApps.push(appName);
             return;
         },
         close: (state, action) => {

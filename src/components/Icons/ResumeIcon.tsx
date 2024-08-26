@@ -1,18 +1,18 @@
-import "../App.css";
-import React, { SetStateAction } from "react";
+import "../../App.css";
 import Draggable from "react-draggable";
 import { useState } from "react";
 
-import { StateTypes } from "../types";
+import { open } from "../../features/Apps/AppSlice";
+import { useAppDispatch } from "../../app/hooks";
 
 type IconProps = {
-  name: string,
+  appName: string,
   img: string,
-  state: StateTypes,
-  setState: React.Dispatch<SetStateAction<StateTypes>>,
 }
 
-export default function Icon2 ({ name, img, state, setState }: IconProps) {
+export default function Icon({ appName, img }: IconProps) {
+
+  const dispatch = useAppDispatch()
 
   const [ selected, setSelected ] = useState(false)
 
@@ -25,10 +25,10 @@ export default function Icon2 ({ name, img, state, setState }: IconProps) {
         tabIndex={0}
         onFocus={() => setSelected(true)}
         onBlur={() => setSelected(false)}
-        onDoubleClick={() => setState({...state, petomeWindowOpen: true})}
+        onDoubleClick={() => dispatch(open('Resume'))}
         >
         <img src={img}></img>
-        <p>{name}</p>
+        <p>{appName}</p>
       </div>
     </Draggable>
   );

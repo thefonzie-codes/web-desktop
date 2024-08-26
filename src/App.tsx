@@ -4,11 +4,12 @@ import svg from './assets/react.svg';
 
 import { useState } from 'react';
 
-import Icon from './components/Icon.tsx';
+import DoneIcon from './components/Icons/DoneIcon.tsx';
 import WindowsList from './components/WindowsList.tsx';
-import Menu from './components/Menu.tsx';
-
-import { useAppSelector, useAppDispatch } from './app/hooks';
+import ResumeIcon from './components/Icons/ResumeIcon.tsx';
+import PetomeIcon from './components/Icons/PetomeIcon.tsx'
+// import Menu from './components/Menu.tsx';
+// import { useAppSelector, useAppDispatch } from './app/hooks';
 
 function App() {
 
@@ -20,9 +21,9 @@ function App() {
 
   return (
     <div className='desktop'>
-      <Menu state={state}/>
-      <Icon img={svg} appName="Done!"/>
-      {/* <Icon2 img={svg} name="Petome" state={state} setState={setState}/> */}
+      <DoneIcon img={svg} appName="Done!" />
+      <ResumeIcon img={svg} appName='Resume'/>
+      <PetomeIcon img={svg} appName='Petome' />
       <WindowsList />
       <Taskbar state={state} setState={setState}/>
     </div>

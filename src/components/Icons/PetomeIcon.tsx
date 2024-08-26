@@ -1,9 +1,9 @@
-import "../App.css";
+import "../../App.css";
 import Draggable from "react-draggable";
 import { useState } from "react";
 
-import { open } from "../features/Apps/AppSlice";
-import { useAppDispatch } from "../app/hooks";
+import { open } from "../../features/Apps/AppSlice";
+import { useAppDispatch } from "../../app/hooks";
 
 type IconProps = {
   appName: string,
@@ -25,7 +25,7 @@ export default function Icon({ appName, img }: IconProps) {
         tabIndex={0}
         onFocus={() => setSelected(true)}
         onBlur={() => setSelected(false)}
-        onDoubleClick={() => dispatch(open('Done'))}
+        onDoubleClick={() => dispatch(open('Petome'))}
         >
         <img src={img}></img>
         <p>{appName}</p>
