@@ -30,6 +30,7 @@ body {
 }
 
 .icon {
+    display: flex;
     margin: 5px;
     padding: 5px;
     flex-direction: column;
@@ -37,7 +38,6 @@ body {
     border-radius: 10px;
 
     p {
-        margin: 0px;
         font-size: x-small;
         user-select: none;
     }

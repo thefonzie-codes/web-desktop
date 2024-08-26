@@ -1,6 +1,8 @@
 import './App.css';
 import Taskbar from './components/Taskbar.tsx';
-import svg from './assets/react.svg';
+import petomeicon from './assets/petomeicon.png'
+import resumeicon from './assets/file-pdf-solid.svg'
+import checkicon from './assets/check.svg'
 
 import { useState } from 'react';
 
@@ -21,9 +23,9 @@ function App() {
 
   return (
     <div className='desktop'>
-      <DoneIcon img={svg} appName="Done!" />
-      <ResumeIcon img={svg} appName='Resume'/>
-      <PetomeIcon img={svg} appName='Petome' />
+      <DoneIcon img={checkicon} appName="Done!" />
+      <ResumeIcon img={resumeicon} appName='Resume'/>
+      <PetomeIcon img={petomeicon} appName='Petome' />
       <WindowsList />
       <Taskbar state={state} setState={setState}/>
     </div>

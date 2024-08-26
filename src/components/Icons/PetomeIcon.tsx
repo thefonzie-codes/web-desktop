@@ -1,7 +1,6 @@
 import "../../App.css";
 import Draggable from "react-draggable";
 import { useState } from "react";
-
 import { open } from "../../features/Apps/AppSlice";
 import { useAppDispatch } from "../../app/hooks";
 
