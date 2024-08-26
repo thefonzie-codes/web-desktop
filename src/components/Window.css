@@ -1,6 +1,11 @@
 .window {
   border: 1px solid gray;
-  display: inline-block;
+  display: flex;
+
+  &.maximized {
+    height: 100%;
+    width: 100%;
+  }
 
   .menu-bar {
     display: flex;
